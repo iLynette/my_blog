@@ -10,8 +10,8 @@
 
 ## SetUp
 To get a local copy up and running follow this steps
-git clone `https://github.com/iLynette/my_blog.git`
-Run `bundle install`
+- git clone `https://github.com/iLynette/my_blog.git`
+- Run `bundle install`
 
 # Run the project
 `rails s`
