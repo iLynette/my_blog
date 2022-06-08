@@ -1,24 +1,45 @@
-# README
+## My Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a Ruby on Rails website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
+## Built with
+- Ruby
+- Rubocop
+- Stylelint
+- RoR
 
-* Ruby version
+## SetUp
+To get a local copy up and running follow this steps
+- git clone `https://github.com/iLynette/my_blog.git`
+- Run `bundle install`
 
-* System dependencies
+# Run the project
+`rails s`
 
-* Configuration
+## Author
 
-* Database creation
+👤 **Lynette Aluoch Acholah**
 
-* Database initialization
+- GitHub: [@iLynette](https://github.com/iLynette)
+- Twitter: [@acholah_lynette](https://twitter.com/acholah_lynette)
+- LinkedIn: [lynette-acholah](https://linkedin.com/in/lynette-acholah)
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Contributions, issues, and feature requests are welcome!
 
-* Deployment instructions
+Feel free to check the [issues page](../../issues/).
 
-* ...
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## Acknowledgments
+
+- Microverse 
+
+## License
+
+This project is [MIT](./MIT.md) licensed.
+
