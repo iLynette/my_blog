@@ -11,4 +11,15 @@ RSpec.describe "Users", type: :request do
         end
       end
   end
+
+  describe 'GET /show' do
+    context "when the page is opened" do
+      it 'returns the correct response' do
+        get '/users/1'
+        expect(response).to have_http_status(200)
+        expect(response.body).to render_template(:show)
+        expect(response.body).to include('Show users details')
+      end
+    end
+  end
 end
