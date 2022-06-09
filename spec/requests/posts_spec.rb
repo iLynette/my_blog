@@ -2,6 +2,13 @@ require 'rails_helper'
 
 RSpec.describe "Posts", type: :request do
   describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+       context "when the page is opened" do
+        it "return a correct response" do
+          get '/users/1/posts'
+          expect(response).to have_http_status(200)
+          expect(response.body).to render_template(:index)
+          expect(response.body).to include('List all posts for a given user')
+        end
+      end
   end
 end
