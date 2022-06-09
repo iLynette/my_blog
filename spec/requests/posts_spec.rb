@@ -11,4 +11,15 @@ RSpec.describe "Posts", type: :request do
         end
       end
   end
+
+  describe 'GET /show' do
+    context "when the page is opened" do
+      it 'returns the correct response' do
+        get '/users/1/posts/1'
+        expect(response).to have_http_status(200)
+        expect(response.body).to render_template(:show)
+        expect(response.body).to include('Show one post for a given user')
+      end
+    end
+  end
 end
