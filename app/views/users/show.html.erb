@@ -16,5 +16,16 @@
   <h3>Bio</h3>
   <p><%= @user.bio%> </p>
 </section>
+<section class="user_post">
+  <% @user.recent_posts.each do |post| %>
+  <div class="posts">
+    <h4><%= post.title %></h4>
+    <p><%= post.text %> </p>
+    <span>
+      Comment: <%= post.comments_counter%>, Likes: <%= post.likes_counter || 0 %>
+    </span>
+  </div>
+</section>
+<% end %>
 </body>
 </html>
