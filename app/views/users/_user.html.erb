@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>A user</title>
+</head>
+<body>
+<section class="user">
+  <img src="<%= user.photo %>" alt="user-image" />
+  <div class="deets">
+    <h2><%= link_to user.name, user_path(user) %></h2>
+    <p>Number of posts: <%= user.posts_counter || 0 %></p>
+  <div>
+</section>
+</body>
+</html>
