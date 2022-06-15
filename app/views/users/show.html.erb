@@ -25,7 +25,10 @@
       Comment: <%= post.comments_counter%>, Likes: <%= post.likes_counter || 0 %>
     </span>
   </div>
+  <% end %>
 </section>
-<% end %>
+<button class="show-posts">
+    <%= link_to "See all posts", user_posts_path(@user) %>
+</button>
 </body>
 </html>
