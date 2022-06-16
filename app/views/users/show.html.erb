@@ -1,2 +1,38 @@
-<h1>Users</h1>
-<p>Show users details</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>A user</title>
+</head>
+<body>
+<section class="users">
+<div class="user-deets">
+  <img class="image" src="<%=@user.photo%>" alt="user_image" />
+  <div class="deets">
+    <h2><%= @user.name%> </h2>
+    <p class="pos">Number of posts: <%= @user.posts_counter%> </p>
+  </div> 
+</div
+</section>
+<section class="user-bio">
+  <h3>Bio</h3>
+  <p><%= @user.bio%> </p>
+</section>
+<section class="user-post">
+  <% @user.recent_posts.each do |post| %>
+    <%= link_to user_post_path(@user, id: post.id) do %>
+  <div class="posts">
+    <h4><%= post.title %></h4>
+    <p><%= post.text %> </p>
+    <span>
+      Comment: <%= post.comments_counter%>, Likes: <%= post.likes_counter || 0 %>
+    </span>
+  </div>
+  <% end %>
+  <% end %>
+</section>
+<button class="show-posts">
+    <%= link_to "See all posts", user_posts_path(@user) %>
+</button>
+</body>
+</html>

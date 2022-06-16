@@ -1,2 +1,17 @@
-<h1>Posts</h1>
-<p>Show one post for a given user</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Post</title>
+</head>
+<body>
+<section class="posts-container">
+<div class="hey">
+  <h4><%= @post.title %></h4>
+  <p class="push">Comments: <%= @post.comments_counter || 0%>, Likes: <%= @post.likes_counter || 0%></p>
+  <p><%= @post.text %></p>
+  </div>
+  <%= render partial: 'comment', locals: {post: @post, comments: @post.comments}%>
+  </section> 
+</body>
+</html>
