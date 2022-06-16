@@ -62,6 +62,10 @@ img {
   gap: 20px;
 }
 
+.user {
+  display: flex;
+}
+
 .deets {
   display: flex;
   justify-content: space-between;
@@ -88,7 +92,9 @@ img {
   margin-left: 80%;
 }
 
-.users-container {
+.user-container {
+  display: flex;
+  flex-direction: column;
   border: 2px solid #000;
   padding: 20px;
   margin: 10px;
