@@ -1,0 +1,5 @@
+<section>
+<% comments.each do |comment| %>
+    <p><%= comment.author.name %>: <%= comment.text %></p>
+<% end %>
+</section>
