@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def current_user
-    User.first
+    User.find(params[:id]|| params[:user_id])
   end
 
   def all_users
