@@ -6,17 +6,19 @@
 </head>
 <body>
 <section class="users">
+<div class="user-deets">
   <img class="image" src="<%=@user.photo%>" alt="user_image" />
   <div class="deets">
     <h2><%= @user.name%> </h2>
-    <p>Number of posts: <%= @user.posts_counter%> </p>
+    <p class="pos">Number of posts: <%= @user.posts_counter%> </p>
   </div> 
+</div
 </section>
-<section class="user_bio">
+<section class="user-bio">
   <h3>Bio</h3>
   <p><%= @user.bio%> </p>
 </section>
-<section class="user_post">
+<section class="user-post">
   <% @user.recent_posts.each do |post| %>
     <%= link_to user_post_path(@user, id: post.id) do %>
   <div class="posts">

@@ -6,10 +6,12 @@
 </head>
 <body>
 <section class="posts-container">
-  <h4<%= @post.title %></h4>
-  <p>Comments: <%= @post.comments_counter || 0%>, Likes: <%= @post.likes_counter || 0%></p>
+<div class="hey">
+  <h4><%= @post.title %></h4>
+  <p class="push">Comments: <%= @post.comments_counter || 0%>, Likes: <%= @post.likes_counter || 0%></p>
   <p><%= @post.text %></p>
+  </div>
   <%= render partial: 'comment', locals: {post: @post, comments: @post.comments}%>
-</section> 
+  </section> 
 </body>
 </html>
