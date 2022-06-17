@@ -1,0 +1,5 @@
+<h3>Add New Like</h3>
+
+<%= form_with model: like, url: user_post_likes_url(post_id: post_id) do |form| %>
+    <% form.submit "Add new like", class:"like"%>
+<%end%>

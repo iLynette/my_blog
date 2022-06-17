@@ -1,0 +1,8 @@
+<h3>Add New comment</h3>
+
+<%= form_with model:@comment, url: user_post_comments_url do |form| %>
+    <%= form.label :Comment %>:
+    <%= form.text_area :text %>
+    <%= form.submit "Add new comment"%>
+<% end %>
+
