@@ -11,7 +11,11 @@
   <p class="push">Comments: <%= @post.comments_counter || 0%>, Likes: <%= @post.likes_counter || 0%></p>
   <p><%= @post.text %></p>
   </div>
+  <%= render partial: 'likes/like', locals: {like: @like, post_id: @post.id} %>
   <%= render partial: 'comment', locals: {post: @post, comments: @post.comments}%>
+  <%= link_to new_user_post_comment_path(post_id: @post.id) do %>
+    <button class="btn">Create comment</button>
+    <%end%>
   </section> 
 </body>
 </html>
