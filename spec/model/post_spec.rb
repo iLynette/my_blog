@@ -1,4 +1,3 @@
-
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
@@ -41,8 +40,8 @@ RSpec.describe Post, type: :model do
     end
 
     it 'should return less than 5 comments ' do
-        value = @post.recent_comments.length
-        expect(value).to be < 5
-      end
+      value = @post.recent_comments.length
+      expect(value).to be < 5
+    end
   end
 end
