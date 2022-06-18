@@ -12,7 +12,7 @@
   <p><%= @post.text %></p>
   </div>
   <%= render partial: 'likes/like', locals: {like: @like, post_id: @post.id} %>
-  <%= render partial: 'comment', locals: {post: @post, comments: @post.comments}%>
+  <%= render partial: 'comment', locals: {post: @post, comments: @post.comments.includes(:author)}%>
   <%= link_to new_user_post_comment_path(post_id: @post.id) do %>
     <button class="btn">Create comment</button>
     <%end%>
