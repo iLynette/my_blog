@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       flash[:notice] = 'Your post has been saved'
       redirect_to user_posts_url
     else
-      flash[:alert] = 'Your comment has been saved'
+      flash[:error] = 'Your comment has been saved'
       redirect_to new_user_post_url(user_id: user.id)
     end
   end
