@@ -17,9 +17,11 @@ class PostsController < ApplicationController
     user = current_user
     post = Post.new(post_params)
     post.author = user
+    post.comments_counter = 0
+    post.likes_counter = 0
     if post.save
       flash[:notice] = 'Your post has been saved'
-      redirect_to user_posts_url(id: user.id)
+      redirect_to user_posts_url
     else
       flash[:alert] = 'Your comment has been saved'
       redirect_to new_user_post_url(user_id: user.id)
