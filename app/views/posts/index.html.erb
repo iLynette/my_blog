@@ -14,7 +14,7 @@
 </section>
 
 <section class="user-container">
-  <% @posts.each do |post| %>
+  <% @posts.includes(:comments).each do |post| %>
     <%= render partial: 'post', locals: {post: post} %>
   <% end %>
   <%= link_to new_user_post_path do %>
