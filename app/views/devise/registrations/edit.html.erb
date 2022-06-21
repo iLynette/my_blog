@@ -10,7 +10,7 @@
 
   <div class="field">
   <%= f.label :name %><br />
-  <%= f.text_field :name %>
+  <%= f.text_field :name, autofocus: true %>
 </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
