@@ -109,3 +109,9 @@ img {
   display: flex;
   justify-content: flex-end;
 }
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
