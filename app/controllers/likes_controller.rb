@@ -6,7 +6,7 @@ class LikesController < ApplicationController
       flash[:notice] = 'You liked the post.'
       redirect_to user_post_url(current_user, current_post)
     else
-      flash[:error] = 'Cant like twice, silly.'
+      flash[:alert] = 'Cant like twice, silly.'
       redirect_to { new_user_post(current_user) }
     end
   end

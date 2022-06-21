@@ -109,3 +109,35 @@ img {
   display: flex;
   justify-content: flex-end;
 }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+.actions {
+  margin-bottom: 1rem;
+}
+
+.login {
+  width: 80%;
+  justify-content: center;
+  padding: 10px;
+}
+
+.mail {
+  width: 80%;
+  padding: 10px;
+}
+
+.passwords {
+  width: 80%;
+  padding: 10px;
+}

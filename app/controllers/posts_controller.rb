@@ -4,10 +4,6 @@ class PostsController < ApplicationController
     @posts = @user.posts.includes(:comments)
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
-
   def new
     @new_post = Post.new
   end
@@ -23,10 +19,16 @@ class PostsController < ApplicationController
       flash[:notice] = 'Your post has been saved'
       redirect_to user_posts_url
     else
-      flash[:error] = 'Your comment has been saved'
+      flash[:alert] = 'Your comment has been saved'
       redirect_to new_user_post_url(user_id: user.id)
     end
   end
+
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  private
 
   def post_params
     params.require(:post).permit(:title, :text)
