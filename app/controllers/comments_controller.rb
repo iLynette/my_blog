@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
       flash[:notice] = 'Your comment has been saved'
       redirect_to user_post_url(id: post.id)
     else
-      flash[:error] = 'Comment was not saved!'
+      flash[:alert] = 'Comment was not saved!'
       redirect_to new_user_post_comment_url(post_id: post.id, user_id: user.id)
     end
   end
