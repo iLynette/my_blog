@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     User.all
   end
 
+  def all_users_post_controller
+    User.find(params[:user_id])
+  end
+
   def current_post
     User.find(params[:user_id]).posts.find(params[:id] || params[:post_id])
   end
