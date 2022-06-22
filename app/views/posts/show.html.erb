@@ -16,6 +16,10 @@
   <%= link_to new_user_post_comment_path(post_id: @post.id) do %>
     <button class="btn">Create comment</button>
     <%end%>
+
+    <% if can? :destroy, @post %>
+      <%= button_to "Delete post", [@post.author, @post], method: :delete %>
+    <%end%>
   </section> 
 </body>
 </html>
