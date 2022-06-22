@@ -1,5 +1,9 @@
 <section>
 <% comments.each do |comment| %>
     <p><%= comment.author.name %>: <%= comment.text %></p>
+
+    <% if can? :destroy, comment %>
+    <%= button_to "Delete comment", user_post_comment_path(post_id: post.id, id: comment.id), method: :delete %>
+ <% end %>
 <% end %>
 </section>
