@@ -8,7 +8,18 @@ class Ability
     user ||= User.new # guest user (not logged in)
     can :read, Post
     can :read, Comment 
-    
+
+
+    return unless user.present?
+    can :manage, Post, author: user
+    can :manage, Comment, author: user
+    can :create, Comment
+    can :create, Like
+    return unless user.role == 'admin'
+     
+    can :manage, :all 
+  end
+end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
@@ -35,5 +46,3 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
-end
