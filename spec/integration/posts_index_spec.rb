@@ -31,3 +31,45 @@ RSpec.describe Post, type: :model do
     end
   end
 end
+
+RSpec.feature 'Posts show page', type: :feature do
+  before(:each) do
+    User.destroy_all
+    @user = User.create(name: 'Lynette', photo: 'profile.png', bio: 'Developer from Zambia',
+                        email: 'lynette@mail.com', password: 'password', confirmed_at: Time.now, role: 'admin', posts_counter: 0)
+    Post.create(title: 'My title', text: 'My text', author_id: @user.id, likes_counter: 0, comments_counter: 0)
+    @comment = Comment.create(text: 'My first comment', author: User.first, post: Post.first)
+    @comment = Comment.create(text: 'My second comment', author: User.first, post: Post.first)
+    @like = Like.create(author_id: User.first.id, post_id: Post.first.id)
+    visit new_user_session_path
+    fill_in 'Email', with: 'lynette@mail.com'
+    fill_in 'Password', with: 'password'
+    click_button 'Log in'
+    visit "/users/#{User.first.id}/posts"
+  end
+  describe 'View posts' do
+    scenario 'See a section of pagination' do
+      expect(page).to have_content('1')
+      expect(page).to have_content('2')
+    end
+    scenario 'I can see the posts title.' do
+      expect(page).to have_content 'My title'
+    end
+    scenario 'I can see who wrote the post' do
+      expect(page).to have_content 'Lynette'
+    end
+    scenario 'I can see the post text.' do
+      expect(page).to have_content 'My text'
+    end
+    scenario 'I can see the post likes counter.' do
+      expect(page).to have_content 'Likes: 1'
+    end
+    scenario 'I can see the post comments counter.' do
+      expect(page).to have_content 'Comments: 2'
+    end
+    scenario 'I can see the post comments.' do
+      expect(page).to have_content 'My first comment'
+      expect(page).to have_content 'My second comment'
+    end
+  end
+end
