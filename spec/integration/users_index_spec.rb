@@ -1,15 +1,22 @@
 require 'rails_helper'
 
-RSpec.feature 'Testing user index page', type: :feature do
+RSpec.describe 'Testing user index page', type: :feature do
   before(:each) do
-    @first = User.create(name: 'Lynette', photo: 'profile.jpg', bio: 'Developer.', email: 'lynette@gmail.com',
-                         password: 'password', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
+    @first = User.create(name: 'Lynette', photo: 'profile.jpg',
+                         bio: 'Developer.',
+                         email: 'lynette@gmail.com',
+                         password: 'password', confirmed_at: Time.now,
+                         posts_counter: 0, role: 'admin')
 
-    @second = User.create(name: 'Kayline', photo: 'profile.jpg', bio: 'Developer.', email: 'kayline@gmail.com',
-                          password: 'password', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
+    @second = User.create(name: 'Kayline', photo: 'profile.jpg',
+                          bio: 'Developer.', email: 'kayline@gmail.com',
+                          password: 'password', confirmed_at: Time.now,
+                          posts_counter: 0, role: 'admin')
 
-    @third = User.create(name: 'Jess', photo: 'profile.jpg', bio: 'Developer.', email: 'jess@gmail.com',
-                         password: 'password', confirmed_at: Time.now, posts_counter: 0, role: 'admin')
+    @third = User.create(name: 'Jess', photo: 'profile.jpg',
+                         bio: 'Developer.', email: 'jess@gmail.com',
+                         password: 'password', confirmed_at: Time.now,
+                         posts_counter: 0, role: 'admin')
 
     visit user_session_path
 
@@ -33,7 +40,6 @@ RSpec.feature 'Testing user index page', type: :feature do
   end
 
   scenario 'See the number of posts each user has written' do
-    expect(page).to have_content('Number of posts: 0')
     expect(page).to have_content('Number of posts: 0')
   end
 

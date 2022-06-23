@@ -4,8 +4,10 @@ RSpec.describe 'Posts show page', type: :feature do
   before(:each) do
     User.destroy_all
     @user = User.create(name: 'Lynette', photo: 'profile.png', bio: 'Developer',
-                        email: 'lynette@email.com', password: 'password', confirmed_at: Time.now, role: 'admin', posts_counter: 0)
-    @user1 = User.create(name: 'Kayline', photo: 'profile.jpg', bio: 'Developer', email: 'kayline@email.com',
+                        email: 'lynette@email.com', password: 'password',
+                        confirmed_at: Time.now, role: 'admin', posts_counter: 0)
+    @user1 = User.create(name: 'Kayline', photo: 'profile.jpg',
+                         bio: 'Developer', email: 'kayline@email.com',
                          password: 'password', confirmed_at: Time.now)
     Post.create(title: 'My title', text: 'My text', author_id: @user.id, likes_counter: 0, comments_counter: 0)
     @comment = Comment.create(text: 'My first comment', author: User.first, post: Post.first)

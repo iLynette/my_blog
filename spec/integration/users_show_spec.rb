@@ -4,7 +4,8 @@ RSpec.feature 'Testing user show page', type: :feature do
   before(:each) do
     User.destroy_all
     @first = User.create(name: 'Lynette', photo: 'profile.png',
-                         bio: 'Developer', email: 'lynette@gmail.com', password: 'password', confirmed_at: Time.now, role: 'admin', posts_counter: 0)
+                         bio: 'Developer', email: 'lynette@gmail.com', password: 'password',
+                         confirmed_at: Time.now, role: 'admin', posts_counter: 0)
 
     visit user_session_path
 
