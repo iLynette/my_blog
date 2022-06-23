@@ -7,5 +7,12 @@ RSpec.feature 'Tests login page', type: :feature do
       expect(page.has_field?('Password')).to be true
       expect(page.has_button?('Log in')).to be true
     end
+  
+    context 'Form Submission' do
+      scenario 'when you log in without proper credentials' do
+        click_button 'Log in'
+        expect(page).to have_content 'Invalid Email or password.'
+      end
 
+    end
   end
