@@ -28,11 +28,13 @@ RSpec.describe 'Testing user index page', type: :feature do
     click_button 'Log in'
   end
 
-  background { visit root_path }
-  scenario 'See all usernames' do
-    expect(page).to have_content('Lynette')
-    expect(page).to have_content('Kayline')
-    expect(page).to have_content('Jess')
+  feature 'User Index' do
+    background { visit root_path }
+    scenario 'See all usernames' do
+      expect(page).to have_content('Lynette')
+      expect(page).to have_content('Kayline')
+      expect(page).to have_content('Jess')
+    end
   end
 
   scenario 'See profile picture for each user' do
