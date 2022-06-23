@@ -5,7 +5,7 @@ RSpec.describe 'Users', type: :request do
     context 'when the page is opened' do
       it 'return a correct response' do
         get '/'
-        expect(response).to have_http_status(200)
+        expect(response).to have_http_status(302)
       end
     end
   end
@@ -13,8 +13,8 @@ RSpec.describe 'Users', type: :request do
   describe 'GET /show' do
     context 'when the page is opened' do
       it 'returns the correct response' do
-        get '/users'
-        expect(response).to have_http_status(200)
+        get '/users/'
+        expect(response).to have_http_status(302)
       end
     end
   end
