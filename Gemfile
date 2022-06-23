@@ -6,9 +6,9 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 ruby '3.0.1'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '6.0.0.rc1'
-  gem 'database_cleaner'
 end
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
