@@ -2,10 +2,10 @@ class Api::PostsController < ApplicationController
   def index
     @user = current_user
     @posts = @user.posts.includes(:comments)
-    render json:@posts
+    render json: @posts
   end
 
   def show
-  render json: @posts
+    render json: @posts
   end
 end
