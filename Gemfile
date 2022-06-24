@@ -83,4 +83,4 @@ gem 'devise'
 
 gem 'cancancan'
 
-gem 'jwt'
+gem 'devise-jwt', '~> 0.5.8'
