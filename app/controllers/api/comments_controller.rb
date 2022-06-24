@@ -12,9 +12,9 @@ class Api::CommentsController < ApplicationController
     comment.author = user
     comment.post = post
     if comment.save
-      render json: @comment, status: :created, location: @comment
+      render json: comment, status: :created, location: comment
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render json: comment.errors, status: :unprocessable_entity
     end
   end
 
