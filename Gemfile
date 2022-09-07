@@ -88,3 +88,5 @@ gem 'cancancan'
 gem 'devise-jwt'
 
 # gem 'dry-configurable', '0.9.0'
+
+gem "tailwindcss-rails", "~> 2.0"
