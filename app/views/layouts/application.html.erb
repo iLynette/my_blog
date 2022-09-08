@@ -12,7 +12,7 @@
   </head>
 
   <body>
-<%= render "nav/header" %>
+  <%= render "nav/header" %>
   <%= yield %>
     <% flash.each do |name, message| %>
     <div class="<%= name %>"><%= message %></div>
