@@ -1,5 +1,4 @@
-<h2>Log in</h2>
-
+<div class="flex justify-center my-56 py-10">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -22,5 +21,4 @@
     <%= f.submit "Log in", class: 'login' %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
